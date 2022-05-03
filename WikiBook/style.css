@@ -109,6 +109,11 @@ color:#ff0099;
   /*background-color: white;*/
 }
 
+a:hover{
+  background-color: #ff0099;
+  color: white;
+}
+
 .italic {
   font-family: untitled-sans-web-regular-italic;
   font-style: oblique;
@@ -149,16 +154,27 @@ h1 {
   /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
+    algin: left;
   }
 
   .ef img{
-  width:100%;  
+  width:100%; 
+  algin: left; 
 }
 
 body {
-  font-size: 2.35rem;
+  font-size: 1.35rem;
 }
 
+.title h1{
+  padding-top: 60px;
+}
+
+h1 {
+  line-height: 1.15;
+  font-size: 3.2rem;
+  margin-top: -15px;
+}
 
 
   .description {
@@ -166,5 +182,6 @@ body {
   height: auto;
 }
 p{
-  color: black;
+  color: #ff0099;
+
 }
