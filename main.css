@@ -29,6 +29,10 @@ body
     margin-top: -10px;
 }
 
+.row h1:hover {
+    color: white;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -305,7 +309,7 @@ body.homepage .nav a[rel="home_page"] + a {
 .description p{
     width: 55%;
     padding-top: 60px;
-    font-size: 2rem;
+    font-size: 1.85rem;
     text-align: left;
     padding-left: 36rem;
 }
@@ -315,14 +319,28 @@ body.homepage .nav a[rel="home_page"] + a {
   font-style: oblique;
 }
 
-.bottom p{
-    text-align: center;
-    font-size: 1.25rem;
-    margin-top: 8.75rem;
+.italic2{
+    font-family: untitled-sans-web-regular-italic;
+    font-style: oblique;
+    font-size :1.5rem;
+    color: white;
 }
 
-@media only screen and (max-width: 600px) {
+.bottom img{
+    width: 90%;
+    height: 10%;
+    align-items: center;
+
+}
+
+.bottomtext p{
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: 64rem;
+}
+
   /* For mobile phones: */
+@media only screen and (max-width: 600px) {
   .description p{
      padding-left: 7.5rem;
      font-size: 1.5rem;
@@ -331,6 +349,15 @@ body.homepage .nav a[rel="home_page"] + a {
  
  .about img{
     width: 60%;
+ }
+
+.bottom img{
+    width: 80%;
+    margin-left: -40px;
+}
+
+ .bottomtext p{
+    margin-top: 18rem;
  }
 
   }
