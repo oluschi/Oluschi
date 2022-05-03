@@ -81,10 +81,6 @@ body
   z-index: 400;
 }
 
-.header a{
-color:#ff0099;
-}
-
 .description {
   margin: 5;
   padding: 0;
@@ -107,7 +103,13 @@ color:#ff0099;
   padding:6px;
   border: 1px solid #ff0099;
   letter-spacing: -.01px;
+  color:#ff0099;
   /*background-color: white;*/
+}
+
+a:hover{
+  background-color: #ff0099;
+  color: white;
 }
 
 .italic {
@@ -151,22 +153,31 @@ h1 {
   /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
+    algin: ;
+    padding-left: -30px;
   }
 
   .ef img{
-  width:100%;  
+  width:100%; 
+  algin: left; 
 }
 
 body {
-  font-size: 2.35rem;
+  font-size: 1.35rem;
 }
 
 h1 {
   line-height: 1.15;
-  font-size: 1.2rem;
+  font-size: 3.2rem;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
   .description {
   columns: 1;
   height: auto;
+}
+p{
+  color: #ff0099;
+
 }
