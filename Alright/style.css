@@ -12,21 +12,11 @@ body {
     font-size: 1.25rem;
     line-height: 1.2;
   cursor:url(../img/stars.png), auto;
+      background-image: radial-gradient(#E0FFE3, #EBF2FF);
 }
 
 /* Background Gradient for Monochromatic Colors */
-body
-{
-    background-color: #C7B6DC;
-    /* For WebKit (Safari, Chrome, etc) */
-    background: #FFFFFF -webkit-gradient(linear, left top, left bottom, from(#C7B6DC), to(#FFFFFF)) no-repeat;
-    /* Mozilla,Firefox/Gecko */
-    background: #FFFFFF -moz-linear-gradient(top,#C7B6DC , #FFFFFF) no-repeat;
-    /* IE 5.5 - 7 */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6B4C90, endColorstr=#FFFFFF) no-repeat;
-    /* IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#6B4C90, endColorstr=#6B4C90)" no-repeat;
-}
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -80,9 +70,6 @@ body
   z-index: 400;
 }
 
-.header a{
-color:#ff0099;
-}
 
 .description {
   margin: 5;
@@ -106,7 +93,13 @@ color:#ff0099;
   padding:6px;
   border: 1px solid #ff0099;
   letter-spacing: -.01px;
+  color:#ff0099;
   /*background-color: white;*/
+}
+
+a:hover{
+  background-color: #ff0099;
+  color: white;
 }
 
 .italic {
