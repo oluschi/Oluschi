@@ -4,6 +4,7 @@
     font-style: oblique;
 }
 
+
 body {
     padding: 0px;
     margin: 10px;
@@ -11,21 +12,7 @@ body {
     color: #ff0099;
     font-size: 1.25rem;
     line-height: 1.2;
-  cursor:url(../images/glimmer2.png), auto;
-}
-
-/* Background Gradient for Monochromatic Colors */
-body
-{
-    background-color: #C7B6DC;
-    /* For WebKit (Safari, Chrome, etc) */
-    background: #FFFFFF -webkit-gradient(linear, left top, left bottom, from(#C7B6DC), to(#FFFFFF)) no-repeat;
-    /* Mozilla,Firefox/Gecko */
-    background: #FFFFFF -moz-linear-gradient(top,#C7B6DC , #FFFFFF) no-repeat;
-    /* IE 5.5 - 7 */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6B4C90, endColorstr=#FFFFFF) no-repeat;
-    /* IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#6B4C90, endColorstr=#6B4C90)" no-repeat;
+  background: url("img/BG_gradient.png");
 }
 
 /* width */
@@ -109,6 +96,11 @@ color:#ff0099;
   /*background-color: white;*/
 }
 
+a:hover{
+  background-color: #ff0099;
+  color: white;
+}
+
 .italic {
   font-family: untitled-sans-web-regular-italic;
   font-style: oblique;
@@ -145,24 +137,39 @@ h1 {
   margin: 0px;
 }
 
+.type img{
+  width: 85%;
+}
+
+.JE img{
+  width: 150%;
+  align-item:lefft ;
+}
+
+
+ /* For mobile phones: */
 
 @media only screen and (max-width: 600px) {
   /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
+    algin: center;
   }
 
   .ef img{
-  width:100%;  
+  width:100%; 
+  algin: center; 
 }
 
 body {
-  font-size: 2.35rem;
+  font-size: 1.35rem;
 }
 
 h1 {
   line-height: 1.15;
-  font-size: 1.2rem;
+  font-size: 3.2rem;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
   .description {
@@ -170,5 +177,6 @@ h1 {
   height: auto;
 }
 p{
-  color: black;
+  color: #ff0099;
+
 }
