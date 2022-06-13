@@ -26,7 +26,7 @@ body
 .row h1{
 	text-align: center;
 	font-size: 3.5rem;
-    margin-top: -10px;
+    margin-top: 20px;
 }
 
 .row h1:hover {
