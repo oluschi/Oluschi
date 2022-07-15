@@ -1,5 +1,4 @@
-
-@font-face {
+font-face {
     font-family: TimesTenLTStd-Italic;
     src: url("../fonts/TimesTenLTStd-Italic.otf") format("otf");
     font-style: oblique;
@@ -8,26 +7,17 @@
 body {
     padding: 0px;
     margin: 10px;
+    -webkit-animation: fadein 5s;
     font-family: untitled-sans-web-regular;
     color: #ff0099;
     font-size: 1.25rem;
     line-height: 1.2;
-  cursor:url(../images/glimmer2.png), auto;
+  background-color: black;
+  
 }
 
 /* Background Gradient for Monochromatic Colors */
-body
-{
-    background-color: #C7B6DC;
-    /* For WebKit (Safari, Chrome, etc) */
-    background: #FFFFFF -webkit-gradient(linear, left top, left bottom, from(#C7B6DC), to(#FFFFFF)) no-repeat;
-    /* Mozilla,Firefox/Gecko */
-    background: #FFFFFF -moz-linear-gradient(top,#C7B6DC , #FFFFFF) no-repeat;
-    /* IE 5.5 - 7 */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6B4C90, endColorstr=#FFFFFF) no-repeat;
-    /* IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#6B4C90, endColorstr=#6B4C90)" no-repeat;
-}
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -63,7 +53,7 @@ body
 .col-3 {width: 35%;}
 .col-4 {width: 33.33%;}
 .col-5 {width: 41.66%;}
-.col-6 {width: 40%;}
+.col-6 {width: 50%;}
 .col-7 {width: 58.33%;}
 .col-8 {width: 66.66%;}
 .col-9 {width: 75%;}
@@ -79,6 +69,10 @@ body
   right:10px;
   position: fixed;
   z-index: 400;
+}
+
+.header a{
+color:#ff0099;
 }
 
 .description {
@@ -103,7 +97,6 @@ body
   padding:6px;
   border: 1px solid #ff0099;
   letter-spacing: -.01px;
-  color:#ff0099;
   /*background-color: white;*/
 }
 
@@ -153,13 +146,13 @@ h1 {
   /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
-    algin: ;
-    padding-left: -30px;
+    algin: left;
   }
 
-  .ef img{
+  .pics img{
   width:100%; 
-  algin: left; 
+  algin: left;
+ margin-right: -155px; 
 }
 
 body {
@@ -171,7 +164,27 @@ h1 {
   font-size: 3.2rem;
   margin-top: 20px;
   padding-top: 20px;
+  font-family: Sneakers-pro,sans-serif;
+   -webkit-text-stroke: 2.5px #43BD64;
+  position: -webkit-sticky;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+
 }
+
+    font-family: Sneakers-pro,sans-serif;
+    font-size: 55px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 3.5vh;
+    color: white;
+    position: sticky;
+    border-radius: 20px;
+
+
 
   .description {
   columns: 1;
