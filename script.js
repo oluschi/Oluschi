@@ -1,34 +1,111 @@
-// About Page PopUp //
+// // Get the element on the page with the id canvas
+// let canvas = document.querySelector("#canvas");
 
-function aboutPopUp() {
-	var about = document.getElementById("aboutPop");
-	about.classList.toggle("show");
-	//popupAbout.classList.toggle("show");//
-	
-	// About Draggle Function//
+// let painting = false;
+// // TODO: Replace with your own emoji
+// let currentEmoji = "img/star.png";
 
-	$(document).ready(function() {
-		$("#dragAbout").draggable();
-		$("#dragAbout").keydown(function() {
-		});
-		$("#dragAbout").keyup(function() {	
-		});
-	});
-};
+// // var img = document.createElement('img');
+// // img.src = './img/star.png';
+// // document.body.appendChild(img);
+
+// // Detect the moment we press the mouse down on the canvas div
+// canvas.addEventListener("mousedown", function (event) {
+//     painting = true;
+//   console.log("click!");
+//   // console.log(event);
+
+//   // Create a new emoji div on the page and set it equal to your desired emoji
+//   let newEmoji = document.createElement("img");
+//   newEmoji.classList.add("emoji");
+//   newEmoji.src = currentEmoji;
+
+//   // Set the style of that position so that it goes where you just pressed your mouse down
+//   newEmoji.style.left = event.pageX + "px";
+//   newEmoji.style.top = event.pageY + "px";
+
+//   // Add that emoji to the canvas element so that it appears on the screen
+//   canvas.appendChild(newEmoji);
+// })
+
+// // TODO: Add functionality that makes it so the emoji "paints" when you hold your mouse down and move it on the screen
 
 
-		// Share Draggle Function //
+// canvas.addEventListener("mousemove", function(event){
+//   if (painting){
+//     let newEmoji = document.createElement("img");
+//     newEmoji.classList.add("emoji");
+//     newEmoji.src = currentEmoji;
 
-$(function () {
-		// body...
-	}).ready(function() {
-		$(".container").draggable();
-		$(".container").keydown(function() {
-		});
-		$(".container").keyup(function() {	
-		});
-	});
-;
+//     newEmoji.style.left = event.pageX + "px";
+//     newEmoji.style.top = event.pageY + "px";
+
+//     // console.log("This is the mousemove event");
+//     // console.log(event);
+
+//     canvas.appendChild(newEmoji);
+//   }
+// })
+
+// canvas.addEventListener("mouseup", function(event){
+//   painting = false;
+//   console.log("unclick!")
+// })
+
+// const emojis=["img/star.png","img/star.png","img/filled_hearts.png","img/flower.png","img/filled_flower.png","img/heart.png" ,"img/smile.png", "img/openstar.png"];
+  
+// function changeEmojis(){
+//   currentEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+// }
+
+// // TODO: Add functionality so when you hit the "Backspace" key, the contents of the canvas clears
+// document.addEventListener("keydown", function(event){
+//   console.log("This is keydown event")
+
+// // This is delete key
+//   if(event.keyCode === 8){
+//     event.preventDefault();
+//     canvas.innerHTML = "";
+//   }
+// // This is the spacebar key
+//   if (event.keyCode == 32){
+//     changeEmojis();
+//   }
+// })
+
+// $('#slide').on('click', function() {
+//   $(this).toggleClass('clicked');
+// });
+
+// const myButton = document.getElementById("myButton");
+// const myPopup = document.getElementById("myPopup");
+// const myOverlay = document.getElementById("myOverlay");
+
+// myButton.addEventListener("click", () => {
+//   myPopup.style.display = "block";
+//   myOverlay.style.display = "block";
+// });
+
+// myPopup.addEventListener("click", () => {
+//   myPopup.style.display = "none";
+//   myOverlay.style.display = "none";
+// });
+
+
+var images = document.querySelectorAll('#image-container img');
+var delay = 1000; // 2 seconds
+
+function showImages() {
+  for (var i = 0; i < images.length; i++) {
+    setTimeout(showImage, delay * i, images[i]);
+  }
+}
+
+function showImage(img) {
+  img.classList.remove('hidden');
+}
+
+setTimeout(showImages, delay);
 
 
 
