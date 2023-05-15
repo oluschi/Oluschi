@@ -1,3 +1,7 @@
+html{
+    cursor:  url('img/arrow.png'), auto;
+}
+
 body {
     padding: 0px;
     margin: 10px;
@@ -6,8 +10,9 @@ body {
 
     line-height: 1.2;
     /*background-image: "img/gradient.jpg";*/
-    background: #C7B6DC;
+    background: #dcd3e7;
     border-radius: 50%;
+    cursor:  url('img/arrow.png'), auto;
 }
 
 /* Intro To Oluschi */
@@ -19,11 +24,13 @@ body {
     font-size: 2rem;
     text-align: left;
     margin-left: 2vw;
+    cursor:  url('img/arrow.png'), auto;
 }
 
 
 .description a:hover {
     color: white;
+    cursor:  url('img/arrow.png'), auto;
 }
 
 .social-icons{
@@ -38,6 +45,7 @@ body {
 }
 
  a {
+    cursor:  url('img/arrow.png'), auto;
     text-decoration: none;
     color: inherit;
 }
@@ -61,15 +69,18 @@ body {
 
 .nav a{
     position: relative;
+    cursor:  url('img/arrow.png'), auto;
+    padding-top: 2vw;
     margin-left: 2vw;
     font-size: 1.35rem;
     top: 90vh;
-
     bottom: 0;
 }
 
 .nav a:hover{
     color: white;
+    text-decoration: underline;
+    cursor:  url('img/arrow.png'), auto;
 }
 
 
@@ -81,6 +92,8 @@ body {
     margin-top: -5px;
     left: 0px;
     top: 0;
+
+    cursor:  url('img/arrow.png'), auto;
     width: 100vw;
     height: 100vh;
     z-index: -2;
@@ -89,7 +102,7 @@ body {
 .emoji {
   position:absolute;
   height: auto;
-  width: 
+  cursor:  url('img/arrow.png'), auto;
 }
 
 /*IMAGE TIMER*/
@@ -102,15 +115,15 @@ body {
     z-index: -5;
 }
 
-  .img1 img{
-    left: 66vw;
+.img1 img{
+    left: 64vw;
     top: 10vh;
-    transform: rotate(1deg);
-
+   transform: rotate(1deg);
 
 }
 
 .img2 img{
+    display: hidden;
     top: 13vh;
     float: right; 
     right: 20vw;
@@ -120,12 +133,12 @@ body {
 
 .img3 img {
     left: 1vw;
-    top: 50vh;
+    top: 40vh;
 }
 
 .img4 img{
     left: 30vw;
-    top: 40vh;
+    top: 30vh;
 
 }
 
@@ -137,7 +150,7 @@ body {
 
 .img6 img{
     left: 1vw;
-    top: 40vh;
+    top: 30vh;
 
 }
 
@@ -162,6 +175,21 @@ body {
     top: 40vh;
 }
 
+/*.draggable{
+   
+}
+
+#drag-container1 {
+  position: relative;
+}
+
+.drag-image1 {
+    top: 13vh;
+    float: right; 
+    right: 20vw;
+    transform: rotate( 2.75deg);
+ 
+}*/
 
 /* Bottom Text */
 .bottomtext p{
@@ -173,15 +201,26 @@ body {
     left: 76vw;
 }
 
+.mobile{
+    display: none;
+}
+
   /* For mobile phones: */
 @media only screen and (max-width: 600px) {
-  .img1 img{
-    width: 45%;
+
+  .draggable{
+    display: none;
+  }
+
+  #image-container{
+    display: none;
+  }
+
+  .mobile img{
+    display: all;
     position: absolute;
-    margin-top: 13vh;
-    
-   
-    margin-left: 30vh;
+    margin-top: 10vh;
+    margin-left: 35vh;
     z-index: -1;
   }
 
@@ -198,6 +237,12 @@ body {
 
  .bottomtext p{
     display: none
+ }
+
+ .bottomtext img{
+    position: absolute;
+    top: ;
+    width: 6%;
  }
 
 

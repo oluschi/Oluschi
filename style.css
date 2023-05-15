@@ -1,0 +1,166 @@
+@font-face {
+    font-family: TimesTenLTStd-Italic;
+    src: url("../fonts/TimesTenLTStd-Italic.otf") format("otf");
+    font-style: oblique;
+}
+
+body {
+    padding: 0px;
+    margin: 10px;
+    font-family: untitled-sans-web-regular;
+
+    background-color: #dcd3e7;
+    color: #ff0099;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    cursor:  url('../img/arrow.png'), auto;
+}
+
+/* Background Gradient for Monochromatic Colors */
+/**/
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 4px #ff0099;
+  border-radius: 8px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff0099; 
+  border-radius: 8px;
+}
+
+.title{
+  margin: 10px ,20px;
+
+}
+
+.container{
+  margin: 5px;
+
+}
+
+  .scrollable-div {
+      margin-left: 30vw;
+      height: 70vh;
+      width: 120vh;
+
+      overflow-x: auto;
+      white-space: nowrap;
+  /*    border: 1px solid #ccc;*/
+    }
+
+    .scrollable-div img {
+      max-width: 100%;
+      max-height: 95%;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .scrollable-div::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .scrollable-div::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 4px #ff0099;
+      border-radius: 8px;
+    }
+
+    .scrollable-div::-webkit-scrollbar-thumb {
+      background: #ff0099; 
+      border-radius: 8px;
+    }
+
+    .scrollable-div::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+.header {
+  position: fixed;
+  width:100%;
+  font-size: 1rem;
+  text-align: right;
+
+  top: 3vw;
+  right:15px;
+  z-index: 400;
+}
+
+.header a{
+color:#ff0099;
+}
+
+.description {
+  position: absolute;
+  width: 25%;
+
+  margin: 5px;
+  padding-right: 15px;
+  color: #ff0099;
+  hyphens: auto;
+
+  padding-top: 40px;
+  z-index: 100;
+}
+
+.description a {
+  color:#ff0099;  
+}
+
+.header a {
+  font-family: TimesTenLTStd-Italic;
+  text-decoration: none;
+  border-radius: 80%;
+  padding:6px;
+  border: 1px solid #ff0099;
+  letter-spacing: -.01px;
+  /*background-color: white;*/
+}
+
+a:hover{
+  background-color: #ff0099;
+  color: white;
+}
+
+
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+    algin: left;
+  }
+
+  .ef img{
+  width:100%; 
+  algin: left; 
+}
+
+body {
+  font-size: 1.35rem;
+}
+
+.title h1{
+  padding-top: 60px;
+}
+
+h1 {
+  line-height: 1.15;
+  font-size: 3.2rem;
+  margin-top: -15px;
+}
+
+
+  .description {
+  columns: 1;
+  height: auto;
+}
+p{
+  color: #ff0099;
+
+}
