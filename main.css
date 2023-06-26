@@ -5,12 +5,14 @@ html{
 body {
     padding: 0px;
     margin: 10px;
-    font-family: "SF Mono Regular", Icons;
-    color: #ff0099;
+    font-family: "Redaction";
+    /*font-family: "SF Mono Regular", Icons;*/
+    color: #dcd3e7;
 
     line-height: 1.2;
     /*background-image: "img/gradient.jpg";*/
-    background: #dcd3e7;
+    background: #7A687F;
+    /*lavender background: #0f0b16, darkpurple #dcd3e7; hotpink:  #ff0099;*/
     border-radius: 50%;
     cursor:  url('img/arrow.png'), auto;
 }
@@ -21,7 +23,7 @@ body {
     width: 55%;
     padding-top: .75vh;
     /*font-size: 1.35rem;*/
-    font-size: 2rem;
+    font-size: 1.65rem;
     text-align: left;
     margin-left: 2vw;
     cursor:  url('img/arrow.png'), auto;
@@ -226,7 +228,7 @@ body {
 
   .description p{
      padding-left: .5rem;
-     font-size: 1.5rem;
+     font-size: 1.75rem;
      text-align: left;
   }
  
