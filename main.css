@@ -278,9 +278,9 @@ a {
  }
 
  .nav a{
-    top: 135vw;
+    top: 155vw;
     align-content: center;
-    fonr-size: .95rem;
+    font-size: .85rem;
     letter-spacing: -.01px;
 
     padding:5px;
