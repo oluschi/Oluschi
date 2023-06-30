@@ -109,8 +109,6 @@ body {
 
   margin: 5px;
   padding-right: 15px;
-  /*color: #ff0099;*/
-  /*color: #dcd3e7;*/
   color: black;
   hyphens: auto;
 
@@ -118,9 +116,6 @@ body {
   z-index: 100;
 }
 
-.description a {
-  /*color:#dcd3e7;*/  
-}
 
 .header a {
   font-family: TimesTenLTStd-Italic;
@@ -129,15 +124,11 @@ body {
   padding:6px;
   letter-spacing: -.01px;
 
-  /*border: 1px solid #dcd3e7;
-  background-color: #7A687F;*/
   border: 1px solid black;
   background-color: whitesmoke;
 }
 
 a:hover{
- /* background-color: #dcd3e7;
-  color: #7A687F;*/
   background-color: black;
   color: #dcd3e7;
 }
@@ -146,35 +137,50 @@ a:hover{
 @media only screen and (max-width: 600px) {
   /* For mobile phones: */
   [class*="col-"] {
-    width: 100%;
+    width: 50%;
     algin: left;
   }
 
   .ef img{
-  width:100%; 
+  width:50%; 
   algin: left; 
 }
 
 body {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
 }
 
 .title h1{
   padding-top: 60px;
 }
 
-h1 {
-  line-height: 1.15;
-  font-size: 3.2rem;
+.container h1 {
+  font-size: 1.5rem;
   margin-top: -15px;
 }
 
+.header{
+  top: 5vh;
+}
 
-  .description {
+.header a{
+  padding: 10px;
+  font-size: 1.15rem;
+}
+
+
+  .description p{
   columns: 1;
   height: auto;
+  width: 48vw;
+  font-size: 1.01rem;
 }
-p{
-  color: #ff0099;
+
+.scrollable-div{
+  margin-left: 60vw;
+  height: 70vh;
+  width: 120vh;
+}
 
 }
+

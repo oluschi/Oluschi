@@ -1,3 +1,5 @@
+/*HOME PAGE CSS*/
+
 html{
    /* cursor:  url('img/arrow.png'), auto;*/
 }
@@ -246,10 +248,21 @@ a {
      font-size: 1.75rem;
      text-align: left;
   }
+
+  .social-icons {
+    padding-top: 6.5vh;
+    position: absolute;
+}
  
  .social-icons img{
     width: 100%;
+    
  }
+
+ .social-icons a{
+    padding_left: 20px;
+}
+
 
 
  .bottomtext p{
@@ -260,6 +273,10 @@ a {
     position: absolute;
     top: ;
     width: 6%;
+ }
+
+ .nav a{
+    top: 110vw;
  }
 
 
