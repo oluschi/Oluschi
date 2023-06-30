@@ -238,20 +238,23 @@ a {
   .mobile img{
     display: all;
     position: absolute;
-    margin-top: 10vh;
+    margin-top: 5vh;
     margin-left: 35vh;
-    z-index: -1;
+    z-index: -100;
   }
 
   .description p{
      padding-left: .5rem;
-     font-size: 1.75rem;
+     font-size: 2rem;
      text-align: left;
   }
 
+
   .social-icons {
-    padding-top: 6.5vh;
+    padding-top: 6.25vh;
     position: absolute;
+    padding-right: 4vw;
+    margin-left: 82vw;
 }
  
  .social-icons img{
@@ -260,9 +263,8 @@ a {
  }
 
  .social-icons a{
-    padding_left: 20px;
+    right: 35px;
 }
-
 
 
  .bottomtext p{
@@ -271,15 +273,18 @@ a {
 
  .bottomtext img{
     position: absolute;
-    top: ;
-    width: 6%;
+    width: 8%;
+    top: 16px;
  }
 
  .nav a{
-    top: 155vw;
-    border-radius: 80%;
-    padding:8px;
+    top: 135vw;
+    align-content: center;
+    fonr-size: .95rem;
     letter-spacing: -.01px;
+
+    padding:5px;
+    border-radius: 80%;
     border: 1px solid black;
  }
 
