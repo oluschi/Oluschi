@@ -276,7 +276,11 @@ a {
  }
 
  .nav a{
-    top: 122vw;
+    top: 140vw;
+    border-radius: 80%;
+    padding:10px;
+    letter-spacing: -.01px;
+    border: 1px solid black;
  }
 
 
