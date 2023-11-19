@@ -155,7 +155,7 @@ body {
 }
 
 .container h1 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-top: -15px;
 }
 
@@ -172,8 +172,8 @@ body {
   .description p{
   columns: 1;
   height: auto;
-  width: 48vw;
-  font-size: 1.01rem;
+  width: 35vw;
+  font-size: 1.35rem;
 }
 
 .scrollable-div{

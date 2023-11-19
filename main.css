@@ -7,35 +7,33 @@ html{
 body {
     padding: 0px;
     margin: 10px;
-    font-family: "Redaction";
-    /*font-family: "SF Mono Regular", Icons;*/
-    /*color: #dcd3e7;*/
     background: whitesmoke;
+    font-family: 'Space Mono', monospace;
     color: black;
     line-height: 1.2;
-    /*background-image: "img/gradient.jpg";*/
-    /*background: #7A687F;*/
-    /*lavender background: #0f0b16, darkpurple #dcd3e7; hotpink:  #ff0099;*/
     border-radius: 50%;
     /*cursor:  url('img/arrow.png'), auto;*/
 }
 
+
 /* Intro To Oluschi */
 .description p{
+
     position: absolute;
     width: 55%;
-    padding-top: .75vh;
+    padding-top: .50vh;
     /*font-size: 1.35rem;*/
-    font-size: 1.65rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25rem;
     text-align: left;
     margin-left: 2vw;
-    /*cursor:  url('img/arrow.png'), auto;*/
+    
 }
 
 
 .description a:hover {
     color: #dcd3e7;
-    /*cursor:  url('img/arrow.png'), auto;*/
+    
 }
 
 .social-icons{
@@ -69,23 +67,6 @@ a {
 }
 
 
-/* width */
-/*::-webkit-scrollbar {
-  width: 5px;
-}*/
-
-/* Track */
-/*::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 4px #ff0099;
-  border-radius: 5px;
-}*/
- 
-/* Handle */
-/*::-webkit-scrollbar-thumb {
-  background: #ff0099; 
-  border-radius: 5px;
-}
-*/
 .nav a{
     position: relative;
     /*cursor:  url('img/arrow.png'), auto;*/
@@ -142,57 +123,48 @@ a {
 }
 
 .img2 img{
-    display: hidden;
-    top: 13vh;
+    top: 18vh;
     float: right; 
     right: 20vw;
-    transform: rotate( 2.75deg);
+    transform: rotate( 3deg);
 
 }
 
 .img3 img {
-    left: 1vw;
-    top: 40vh;
+    right: 15vw;
+    top: 34vh;
 }
 
 .img4 img{
-    left: 30vw;
-    top: 30vh;
+    left: 85vw;
+    top: 65vh;
 
 }
 
 .img5 img{
-    left: 10vw;
-    top: 45vh;
-
+    left: 40vw;
+    top: 25vh;
 }
 
 .img6 img{
-    left: 1vw;
-    top: 30vh;
-
+    left: 30vw;
+    top: 55vh;
+    transform: rotate( -5deg);
 }
 
+
 .img7 img{
-    left: 50vw;
-    top: 60vh;
+    left: 18vw;
+    top: 45vh;
 }
 
 .img8 img{
-    left: 61vw;
-    top: 22vh;
-
+    left: 7vw;
+    top: 25vh;
+    transform: rotate( 2deg);
 }
 
-.img9 img{
-    left: 50vw;
-    top: 60vh;
-}
 
-.img10 img{
-    left: 25vw;
-    top: 40vh;
-}
 
 /*.draggable{
    
@@ -215,7 +187,7 @@ a {
     position: absolute;
     text-align: right;
 
-    font-size: 1.35rem;
+    font-size: 1rem;
     top: 48.5vw;
     left: 76vw;
 }
@@ -280,7 +252,7 @@ a {
  .nav a{
     top: 155vw;
     align-content: center;
-    font-size: 1.30rem;
+    font-size: 1rem;
     letter-spacing: -.01px;
 
     padding:5px;
