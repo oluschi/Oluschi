@@ -1,3 +1,5 @@
+/* PORTFOLIOS CSS*/
+
 @font-face {
     font-family: TimesTenLTStd-Italic;
     src: url("../fonts/TimesTenLTStd-Italic.otf") format("otf");
@@ -7,7 +9,7 @@
 body {
     padding: 0px;
     margin: 10px;
-    font-family: untitled-sans-web-regular;
+    font-family:  'Space Mono', monospace;
     line-height: 1.2;
     background: whitesmoke;
     color: black;
@@ -116,6 +118,9 @@ body {
   z-index: 100;
 }
 
+.description  p{
+  font-size: .85rem;
+}
 
 .header a {
   font-family: TimesTenLTStd-Italic;
@@ -172,14 +177,14 @@ body {
   .description p{
   columns: 1;
   height: auto;
-  width: 35vw;
-  font-size: 1.35rem;
+  width: 50vw;
+  font-size: .75rem;
 }
 
 .scrollable-div{
   margin-left: 60vw;
   height: 70vh;
-  width: 120vh;
+  width: 35vh;
 }
 
 }
