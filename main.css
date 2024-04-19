@@ -164,6 +164,11 @@ a {
     transform: rotate( 2deg);
 }
 
+.img9 img{
+    right: 28vw;
+    top: 52vh;
+}
+
 
 
 /*.draggable{
