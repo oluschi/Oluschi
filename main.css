@@ -125,50 +125,73 @@ a {
 .img2 img{
     top: 18vh;
     float: right; 
-    right: 20vw;
-    transform: rotate( 3deg);
+    right: 10vw;
+    transform: rotate( 1deg);
 
 }
 
 .img3 img {
-    right: 15vw;
-    top: 34vh;
+    right: 1vw;
+    top: 23vh;
 }
 
 .img4 img{
-    left: 85vw;
-    top: 65vh;
+    left: 62vw;
+    top: 20vh;
 
 }
 
 .img5 img{
-    left: 40vw;
-    top: 25vh;
+    left: 30vw;
+    top: 18vh;
 }
 
 .img6 img{
-    left: 30vw;
-    top: 55vh;
-    transform: rotate( -5deg);
+    left: 15vw;
+    top: 37vh;
+    transform: rotate( 3deg);
 }
 
 
 .img7 img{
-    left: 18vw;
-    top: 45vh;
+    left: 3vw;
+    top: 55vh;
 }
 
 .img8 img{
-    left: 7vw;
-    top: 25vh;
-    transform: rotate( 2deg);
+    left: 3vw;
+    top: 22vh;
+    transform: rotate( -3deg);
 }
 
 .img9 img{
-    right: 28vw;
-    top: 52vh;
+    right: 34vw;
+    top: 34vh;
+    transform: rotate( -5deg);
 }
 
+.img10 img{
+    left: 50vw;
+    top: 82vh;
+    transform: rotate( 2deg);
+}
+
+.img11 img{
+    left: 29vw;
+    top: 52vh;
+    transform: rotate( 1deg);
+}
+
+.img12 img{
+    left: 18vw;
+    top: 20vh;
+}
+
+.img13 img{
+    right: 20vw;
+    top: 60vh;
+    transform: rotate( 5deg);
+}
 
 
 /*.draggable{
