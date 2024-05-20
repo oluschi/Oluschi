@@ -12,6 +12,7 @@ body {
     color: black;
     line-height: 1.2;
     border-radius: 50%;
+    /*background-image: url("img/site_card.gif")*/
     /*cursor:  url('img/arrow.png'), auto;*/
 }
 
@@ -96,7 +97,7 @@ a {
     /*cursor:  url('img/arrow.png'), auto;*/
     width: 100vw;
     height: 100vh;
-    z-index: -2;
+    z-index: -1;
 }
 
 .emoji {
@@ -105,8 +106,22 @@ a {
   /*cursor:  url('img/arrow.png'), auto;*/
 }
 
+/*BG_IMG*/
+
+.bg_image{
+    position: fixed;
+    z-index: -2;
+    left: 12vw;
+    top: 10vh;
+}
+
+.bg_image img{
+    align-content: center;
+    height: 80vh;
+}
+
 /*IMAGE TIMER*/
-.hidden {
+/*.hidden {
   display: none;
 }
 
@@ -191,23 +206,8 @@ a {
     right: 20vw;
     top: 62vh;
 }
+*/
 
-
-/*.draggable{
-   
-}
-
-#drag-container1 {
-  position: relative;
-}
-
-.drag-image1 {
-    top: 13vh;
-    float: right; 
-    right: 20vw;
-    transform: rotate( 2.75deg);
- 
-}*/
 
 /* Bottom Text */
 .bottomtext p{
