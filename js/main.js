@@ -1,180 +1,152 @@
 /* ============================================================
-   OLUSCHI HARMON — Homepage JS
+   OLUSCHI HARMON V2 — Main JS
    js/main.js
    ============================================================ */
 
-/* ── OVERLAY NAV ── */
-const overlayIds = ['about-overlay', 'work-overlay', 'archive-overlay'];
-const tabIds     = ['tab-about', 'tab-work', 'tab-archive'];
-const scrim      = document.getElementById('overlay-scrim');
-const TRANSITION_MS = 320; // matches CSS transform duration
+/* ── STATE ── */
+let activePanel = null;
 
-function openOverlay(o, t) {
-  document.getElementById(o).classList.add('open');
-  document.getElementById(t).classList.add('active');
-  if (scrim) scrim.classList.add('visible');
-}
+const panels = {
+  about:   document.getElementById('about-panel'),
+  work:    document.getElementById('work-panel'),
+  archive: document.getElementById('archive-panel'),
+};
 
-function toggleOverlay(o, t) {
-  const isOpen = document.getElementById(o).classList.contains('open');
-  const currentId = overlayIds.find(id => document.getElementById(id).classList.contains('open'));
+const navBtns = {
+  about:   document.getElementById('nav-about'),
+  work:    document.getElementById('nav-work'),
+  archive: document.getElementById('nav-archive'),
+};
 
-  if (isOpen) {
-    closeAll();
+/* ── PANEL OPEN / CLOSE ── */
+function openPanel(name) {
+  if (projectOpen) closeProject();          // a panel choice always drops the project layer
+  if (activePanel && activePanel !== name) {
+    closePanel(activePanel, false);
+  }
+  if (activePanel === name) {        // clicking the active item closes it
+    closePanel(name);
     return;
   }
-
-  if (currentId) {
-    // close current, wait for it to animate out, then open new
-    closeAll();
-    setTimeout(() => openOverlay(o, t), TRANSITION_MS);
-  } else {
-    openOverlay(o, t);
-  }
+  panels[name].classList.add('open');
+  navBtns[name].classList.add('active');
+  document.body.classList.add('panel-open');
+  activePanel = name;
+  document.body.classList.toggle('about-active', name === 'about');
 }
 
-function closeOverlay(o, t) {
-  document.getElementById(o).classList.remove('open');
-  if (t) document.getElementById(t).classList.remove('active');
-  if (!document.querySelector('.overlay.open') && scrim) scrim.classList.remove('visible');
+function closePanel(name, clearState = true) {
+  if (!panels[name]) return;
+  panels[name].classList.remove('open');
+  navBtns[name].classList.remove('active');
+  if (clearState) {
+    document.body.classList.remove('panel-open');
+    document.body.classList.remove('about-active');
+    activePanel = null;
+  }
 }
 
 function closeAll() {
-  overlayIds.forEach(o => document.getElementById(o).classList.remove('open'));
-  tabIds.forEach(t => document.getElementById(t).classList.remove('active'));
-  if (scrim) scrim.classList.remove('visible');
   closeProject();
+  Object.keys(panels).forEach(name => closePanel(name, false));
+  document.body.classList.remove('panel-open');
+  document.body.classList.remove('about-active');
+  activePanel = null;
 }
 
-// open overlay if page was reached via a hash link from a project page
-(function () {
-  const map = { '#about': ['about-overlay','tab-about'], '#work': ['work-overlay','tab-work'], '#archive': ['archive-overlay','tab-archive'] };
-  const entry = map[location.hash];
-  if (entry) openOverlay(entry[0], entry[1]);
-})();
+/* ── PROJECT LAYER — slides a fetched project page up over the Work list ── */
+const projectLayer = document.getElementById('project-layer');
+const projectBody  = projectLayer.querySelector('.project-layer-body');
+const projectClose = projectLayer.querySelector('.project-layer-close');
+let projectOpen = false;
 
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
-if (scrim) scrim.addEventListener('click', closeAll);
+async function openProject(url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('fetch failed');
+    const html = await res.text();
+    const doc  = new DOMParser().parseFromString(html, 'text/html');
+    const main = doc.querySelector('.project-standalone');
+    if (!main) throw new Error('no project content');
 
-/* ── WORK GIF PREVIEW ── */
-const preview = document.getElementById('work-preview-img');
-if (preview) {
-  document.querySelectorAll('.work-row[data-preview]').forEach(row => {
-    row.addEventListener('mouseenter', () => {
-      preview.src = row.dataset.preview;
-      preview.style.aspectRatio = row.dataset.ratio || 'auto';
-      preview.classList.add('show');
+    /* resolve the project's relative img/href paths against its own location */
+    const base = new URL(url, location.href);
+    main.querySelectorAll('img[src]').forEach(img => {
+      img.setAttribute('src', new URL(img.getAttribute('src'), base).href);
     });
-    row.addEventListener('mousemove', e => { preview.style.left = (e.clientX + 20) + 'px'; preview.style.top = (e.clientY - 64) + 'px'; });
-    row.addEventListener('mouseleave', () => preview.classList.remove('show'));
-  });
-}
+    main.querySelectorAll('a[href]').forEach(a => {
+      a.setAttribute('href', new URL(a.getAttribute('href'), base).href);
+    });
 
-/* ── ARCHIVE PROJECT DETAIL ── */
-const projects = [
-  {
-    label: 'Pinterest x e.l.f. Cosmetics Zine',
-    title: 'Pinterest x e.l.f. Cosmetics Zine',
-    sub: 'Visual & digital design · 2025–Present',
-    body: 'Brought to life — from concepting to production — the look and feel of Pinterest\'s first digital zine with e.l.f. Cosmetics.',
-    imgs: [
-      'work/pinterest/img/zine_1.gif',
-      'work/pinterest/img/zine_2.gif',
-      'work/pinterest/img/pin_zine.gif'
-    ]
-  },
-  {
-    label: 'To Be Archived',
-    title: 'To Be Archived — Thesis',
-    sub: 'Web + Book Design · 2023',
-    body: 'A mixed media archive capturing personal style over 30 days — divided into a website and a physical journal, each acting as an interactive guide through the evolution of fashion styling.',
-    imgs: [
-      'work/thesis/Final_Poster.gif',
-      'work/thesis/tba_pics.gif',
-      'work/thesis/scan_sketch_3.png',
-      'work/thesis/TBA_Home.gif',
-      'work/thesis/archived_outfits.jpg'
-    ]
-  },
-  {
-    label: '256 Book',
-    title: '256 Book',
-    sub: 'Book Design · 2022',
-    body: 'A book inspired by the aesthetics of Instagram saved folders. Random images, photos, and moments collected across a phone — reframed as a physical archive.',
-    imgs: [
-      'work/256/256_SavedImages.png',
-      'work/256/bn_256.gif',
-      'work/256/cover_256.png',
-      'work/256/mc_256.gif'
-    ]
-  },
-  {
-    label: 'Al-Majles',
-    title: 'Al-Majles',
-    sub: 'Experimental Design · 2023',
-    body: 'The essence of the psychology of Arabian men through the stylization of late 90s editing.',
-    imgs: [
-      'work/almajles/img/Al_Majles_motion.gif',
-      'work/almajles/img/Shirt_mockup.png',
-      'work/almajles/img/flyingcards_Album.png',
-      'work/almajles/img/Al_Majles.gif'
-    ]
-  },
-  {
-    label: 'Ap0cene',
-    title: 'Ap0cene — Social Media',
-    sub: 'Social Media Design · 2022–23',
-    body: 'Visual and digital design across platforms for Ap0cene. Social-first creative assets with a strong editorial point of view.',
-    imgs: [
-      'work/ap0cene/img/GiftGuide_Ap0cene.gif',
-      'work/ap0cene/img/shyfck_Graphics_blush.gif',
-      'work/ap0cene/img/aephotika_1.JPG',
-      'work/ap0cene/img/aephotika_2.JPG',
-      'work/ap0cene/img/aephotika_3.JPG',
-      'work/ap0cene/img/SF_SalePost.png'
-    ]
-  },
-  {
-    label: 'Taking Up Space',
-    title: 'Manifesto Posters — Taking Up Space',
-    sub: 'Typography · 2021',
-    body: 'A series of manifesto posters exploring space, type, and presence.',
-    imgs: [
-      'work/tus/tus_posters.png',
-      'work/tus/mp_folded.png',
-      'work/tus/tup_poster2.png'
-    ]
+    projectBody.replaceChildren(main);
+    projectBody.scrollTop = 0;
+    projectLayer.classList.add('open');
+    projectLayer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('project-open');
+    projectOpen = true;
+  } catch (e) {
+    location.href = url;          // graceful fallback → the standalone page
   }
-];
-
-function openProject(idx) {
-  const p = projects[idx];
-  document.getElementById('detail-label').textContent = p.label;
-  document.getElementById('detail-title').textContent = p.title;
-  document.getElementById('detail-sub').textContent   = p.sub;
-  document.getElementById('detail-body').textContent  = p.body;
-  const strip = document.getElementById('detail-strip');
-  strip.innerHTML = '';
-  p.imgs.forEach(src => {
-    const img = document.createElement('img');
-    img.src = src; img.alt = p.title;
-    strip.appendChild(img);
-  });
-  document.getElementById('project-detail').classList.add('open');
 }
 
 function closeProject() {
-  const el = document.getElementById('project-detail');
-  if (el) el.classList.remove('open');
+  if (!projectOpen) return;
+  projectLayer.classList.remove('open');
+  projectLayer.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('project-open');
+  projectOpen = false;
 }
 
-/* ── BG WORD ── */
-const words = ['archiving.', 'making.', 'directing.', 'collecting.', 'storytelling.', 'curating.'];
-let wi = 0;
-const bgWord = document.getElementById('bg-word');
-if (bgWord) {
-  setInterval(() => {
-    bgWord.style.opacity = '0';
-    setTimeout(() => { wi = (wi + 1) % words.length; bgWord.textContent = words[wi]; bgWord.style.opacity = '1'; }, 1200);
-  }, 4000);
-}
+projectClose.addEventListener('click', closeProject);
+
+/* intercept work-item clicks → open the slide-up layer instead of navigating */
+document.querySelectorAll('.work-item').forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    openProject(item.getAttribute('href'));
+  });
+});
+
+/* clicks inside the layer: prev/next swap content, panel links return home,
+   external/source links open normally */
+projectBody.addEventListener('click', e => {
+  const a = e.target.closest('a');
+  if (!a) return;
+  if (a.target === '_blank') return;                         // source links
+  const href = a.getAttribute('href') || '';
+  if (/^https?:\/\//.test(href) && !href.includes('/work/')) return;
+  if (href.includes('/work/') && href.includes('index.html')) {   // prev / next
+    e.preventDefault();
+    openProject(href);
+    return;
+  }
+  const hashMatch = href.match(/index\.html#(\w+)/);          // back to a panel
+  if (hashMatch) {
+    e.preventDefault();
+    closeProject();
+    if (panels[hashMatch[1]]) openPanel(hashMatch[1]);
+  }
+});
+
+/* ── NAV BUTTONS ── */
+navBtns.about.addEventListener('click',   () => openPanel('about'));
+navBtns.work.addEventListener('click',    () => openPanel('work'));
+navBtns.archive.addEventListener('click', () => openPanel('archive'));
+
+/* ── FOLDER TABS (the peeking tongues) open their panel ── */
+document.querySelectorAll('.panel-tab').forEach(tab => {
+  tab.addEventListener('click', () => openPanel(tab.dataset.panel));
+});
+
+/* ── ESC TO CLOSE ── (project layer first, then any open panel) ── */
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (projectOpen) { closeProject(); return; }
+  closeAll();
+});
+
+/* ── OPEN A PANEL FROM URL HASH (returning from a project sub-page) ── */
+(function () {
+  const h = (location.hash || '').replace('#', '');
+  if (panels[h]) openPanel(h);
+})();
