@@ -3,242 +3,398 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oluschi's Digital Portfolio</title>
+  <title>Oluschi Harmon</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/project.css">
   <link rel="shortcut icon" href="img/star.png" type="image/x-icon">
 </head>
 <body>
 
-  <div id="bg-word">archiving.</div>
-  <div id="star-motif">✦</div>
-  <div class="overlay-scrim" id="overlay-scrim"></div>
+  <!-- ══════════════════════════════
+       FIXED ELEMENTS — always visible
+       ══════════════════════════════ -->
 
-  <!-- HEADER -->
-  <header>
-    <div class="name-block">
-      <a href="index.html" onclick="closeAll();return false;">
-        <h1>Oluschi Harmon</h1>
-        <div class="tag">interdisciplinary creative &amp; designer</div>
-      </a>
-    </div>
-    <div class="header-right">
-      <a href="https://www.linkedin.com/in/oluschi-harmon-893737202/" target="_blank"><img src="img/link_icon_b.png" alt="LinkedIn"></a>
-      <a href="mailto:oluschiharmon@gmail.com"><img src="img/mail_icon_b.png" alt="Email"></a>
-      <a href="https://www.pinterest.com/OluschiH/" target="_blank"><img src="img/pin_icon_b.png" alt="Pinterest"></a>
-    </div>
-  </header>
-
-  <!-- MAIN -->
-  <main>
-    <div class="gif-stage">
-      <img src="img/site_card.gif" alt="Oluschi Harmon">
-      <div class="site-copy">
-        <p class="copy-body">a <strong>creative &amp; designer </strong> working where <strong>culture, design &amp; social</strong> meet. I start from what's happening online — then turn it into ideas worth stopping for, art directed end to end.</p>
-     
-      </div>
-    </div>
-  </main>
-
-  <!-- ABOUT OVERLAY -->
-  <div class="overlay" id="about-overlay">
-    <div class="folder-chrome">
-      <div class="folder-bar">
-        <span class="folder-bar-label">About</span>
-        <button class="folder-close" onclick="closeOverlay('about-overlay','tab-about')">×</button>
-      </div>
-      <div class="about-top">
-        <div class="about-img-col">
-          <img class="about-portrait" src="img/lulu.png" alt="Oluschi Harmon">
-        </div>
-        <div class="about-info-col">
-          <div>
-            <div class="about-name">Oluschi Harmon</div>
-            <div class="about-role">Creative Strategist @ Pinterest<br>Interdisciplinary creative &amp; designer · New York</div>
-          </div>
-          <div class="about-bio">BFA Communication Design, Parsons School of Design. I work across strategy, art direction and production — most at home where a brand meets internet culture. I believe the best social work doesn't interrupt the feed; it earns a place in it.</div>
-         <!--  <div class="about-quote">"I am going to make everything around me beautiful — that will be my life."<em style="font-size:9px;color:var(--mid);display:block;margin-top:3px;">— Elsie de Wolfe</em></div> -->
-        </div>
-      </div>
-      <div class="about-mid">
-        <span class="a-label">Experience</span>
-        <div class="exp-row"><span class="exp-role">Creative Strategist<span class="exp-co">· Pinterest</span></span><span class="exp-yr">2024 – Present </span></div>
-        <div class="exp-row"><span class="exp-role">Creative Producer<span class="exp-co">· Ok Cool</span></span><span class="exp-yr">2024</span></div>
-        <div class="exp-row"><span class="exp-role">Social Media Editor<span class="exp-co">· Highsnobiety</span></span><span class="exp-yr">2023–24</span></div>
-        <div class="exp-row"><span class="exp-role">Graphic &amp; Social Intern<span class="exp-co">· Collina Strada</span></span><span class="exp-yr">2023</span></div>
-        <div class="exp-row"><span class="exp-role">Social Media Designer<span class="exp-co">· Ap0cene</span></span><span class="exp-yr">2022–23</span></div>
-        <div class="tags-wrap">
-          <span class="atag lead">Art Direction</span><span class="atag lead">Social Strategy</span><span class="atag lead">Trend Forecasting</span><span class="atag lead">Creative Concepting</span>
-          <span class="atag">Figma</span><span class="atag">After Effects</span><span class="atag">Illustrator</span><span class="atag">Blender</span><span class="atag">HTML/CSS/JS</span>
-        </div>
-      </div>
-      <div class="about-bottom">
-        <div class="about-bottom-col">
-          <span class="a-label">Just for fun</span>
-          <p>Sewing · Pattern Making<br>Doodling · Junk Journaling<br>Doom Scrolling</p>
-        </div>
-      </div>
-    </div>
-    <img class="about-star" src="img/star.gif" alt="">
+  <!-- Social icons -->
+  <div id="social-icons">
+    <a href="https://www.linkedin.com/in/oluschi-harmon-893737202/" target="_blank">
+      <img src="img/link_icon_b.png" alt="LinkedIn">
+    </a>
+    <a href="mailto:oluschiharmon@gmail.com">
+      <img src="img/mail_icon_b.png" alt="Email">
+    </a>
+    <a href="https://www.pinterest.com/OluschiH/" target="_blank">
+      <img src="img/pin_icon_b.png" alt="Pinterest">
+    </a>
   </div>
 
-  <!-- WORK OVERLAY -->
-  <div class="overlay" id="work-overlay">
-    <div class="work-folder folder-chrome">
-      <div class="folder-bar"><span class="folder-bar-label">Work</span><button class="folder-close" onclick="closeOverlay('work-overlay','tab-work')">×</button></div>
-      <a class="work-row" href="work/carolinaherrera/index.html" data-preview="work/carolinaherrera/img/260528_DeLaTorre_021.jpg" data-ratio="2/3"><span class="work-num">01</span><div><div class="work-title">Pinterest Predicts x Carolina Herrera</div><div class="work-sub">Art direction &amp; production</div></div><span class="work-meta">2026</span><span class="work-arrow">→</span></a>
-
-      <a class="work-row" href="work/pinterest/index.html" data-preview="work/pinterest/img/cover_img_nike.jpg" data-ratio="2/3"><span class="work-num">02</span><div><div class="work-title">Pinterest x Nike Air Max Day</div><div class="work-sub">Art direction &amp; Pin Extension</div></div><span class="work-meta">2026</span><span class="work-arrow">→</span></a>
-
-      <a class="work-row" href="work/ok-cool/index.html" data-preview="work/ok-cool/img/trust_fund.gif"><span class="work-num">03</span><div><div class="work-title">Ok Cool — Creative Production</div><div class="work-sub">Motion · Spotify, Bumble, Nutrafol</div></div><span class="work-meta">2024</span><span class="work-arrow">→</span></a>
-
-      <!--  Social-first motion content for Spotify, Bumble, and Nutrafol. Led graphic and motion design across pitches and campaigns.
- -->
-
-      <a class="work-row" href="work/julie/index.html" data-preview="work/julie/img/julie_dj.jpg" data-ratio="1/1"><span class="work-num">04</span><div><div class="work-title">Highsnobiety — Julie</div><div class="work-sub">Art direction &amp; production</div></div><span class="work-meta">2024</span><span class="work-arrow">→</span></a>
-
-      <a class="work-row" href="work/highsnobiety/index.html" data-preview="work/highsnobiety/img/bestof.gif"><span class="work-num">05</span><div><div class="work-title">Highsnobiety — Social Editorial</div><div class="work-sub">Social media &amp; editorial design</div></div><span class="work-meta">2023–24</span><span class="work-arrow">→</span></a>
-
-      <a class="work-row" href="work/collina/index.html" data-preview="work/collina/img/bearheads.gif"><span class="work-num">06</span><div><div class="work-title">Collina Strada</div><div class="work-sub">Graphic &amp; Social Design</div></div><span class="work-meta">2023</span><span class="work-arrow">→</span></a>
-    </div>
-  </div>
-  <img class="work-preview" id="work-preview-img" src="" alt="">
-
-  <!-- ARCHIVE OVERLAY -->
-  <div class="overlay" id="archive-overlay">
-    <div class="archive-bar">
-      <span class="archive-bar-label">Archive</span>
-      <span class="archive-bar-hint">scroll · swipe images · click to open</span>
-      <button class="archive-close" onclick="closeOverlay('archive-overlay','tab-archive')">×</button>
-    </div>
-    <div class="archive-stage">
-      <div class="archive-grid">
-
-    <!--     <div class="arc-card" onclick="openProject(0)">
-          <div class="arc-img-strip">
-            <img src="pinterest/img/zine_1.gif" alt="">
-            <img src="pinterest/img/pin_zine.gif" alt="">
-            <img src="pinterest/img/pin_zine.gif" alt="">
-            
-          <div class="arc-card-info">
-            <div class="arc-card-title">Pinterest - e.l.f. Cosmetics Digital Znes</div>
-            <div class="arc-card-sub">Visual &amp; digital design 2025-Present</div>
-            <div class="arc-card-body">Brought to life, from concepting to production, the look and feel of Pinterest 1st digital zine with e.l.f. </div>
-          </div>
-        </div> -->
-
-        <div class="arc-card" onclick="openProject(0)">
-          <div class="arc-img-strip">
-            <img src="work/pinterest/img/zine_1.gif" alt="" loading="lazy">
-            <img src="work/pinterest/img/zine_2.gif" alt="" loading="lazy">
-            <img src="work/pinterest/img/pin_zine.gif" alt="" loading="lazy">
-          </div>
-          <div class="arc-card-info">
-            <div class="arc-card-title">Pinterest x e.l.f. Cosmetics Zine</div>
-            <div class="arc-card-sub">Visual &amp; digital design · 2025–Present</div>
-            <div class="arc-card-body">Brought to life — from concepting to production — the look and feel of Pinterest's first digital zine with e.l.f. Cosmetics.</div>
-          </div>
-        </div>
-
-        <div class="arc-card" onclick="openProject(1)">
-          <div class="arc-img-strip">
-            <img src="work/thesis/Final_Poster.gif" alt="" loading="lazy">
-            <img src="work/thesis/tba_pics.gif" alt="" loading="lazy">
-            <img src="work/thesis/scan_sketch_3.png" alt="" loading="lazy">
-            <img src="work/thesis/TBA_Home.gif" alt="" loading="lazy">
-            <img src="work/thesis/archived_outfits.jpg" alt="" loading="lazy">
-          </div>
-          <div class="arc-card-info">
-            <div class="arc-card-title">To Be Archived</div>
-            <div class="arc-card-sub">Web + Book Design · 2023</div>
-            <div class="arc-card-body">BFA thesis. A mixed media archive capturing personal style over 30 days — website and physical journal.</div>
-          </div>
-        </div>
-
-        <div class="arc-card" onclick="openProject(2)">
-          <div class="arc-img-strip">
-            <img src="work/256/256_SavedImages.png" alt="" loading="lazy">
-            <img src="work/256/bn_256.gif" alt="" loading="lazy">
-            <img src="work/256/cover_256.png" alt="" loading="lazy">
-            <img src="work/256/mc_256.gif" alt="" loading="lazy">
-          </div>
-          <div class="arc-card-info">
-            <div class="arc-card-title">256 Book</div>
-            <div class="arc-card-sub">Book Design · 2022</div>
-            <div class="arc-card-body">A book inspired by Instagram saved folders. Random images and moments — reframed as a physical archive.</div>
-          </div>
-        </div>
-
-        <div class="arc-card" onclick="openProject(3)">
-          <div class="arc-img-strip">
-            <img src="work/almajles/img/Al_Majles_motion.gif" alt="" loading="lazy">
-            <img src="work/almajles/img/Shirt_mockup.png" alt="" loading="lazy">
-            <img src="work/almajles/img/flyingcards_Album.png" alt="" loading="lazy">
-            <img src="work/almajles/img/Al_Majles.gif" alt="" loading="lazy">
-          </div>
-          <div class="arc-card-info">
-            <div class="arc-card-title">Al-Majles</div>
-            <div class="arc-card-sub">Experimental Design · 2023</div>
-            <div class="arc-card-body">The essence of the psychology of Arabian men through the stylization of late 90s editing.</div>
-          </div>
-        </div>
-
-        <div class="arc-card" onclick="openProject(4)">
-          <div class="arc-img-strip">
-            <img src="work/ap0cene/img/GiftGuide_Ap0cene.gif" alt="" loading="lazy">
-            <img src="work/ap0cene/img/shyfck_Graphics_blush.gif" alt="" loading="lazy">
-            <img src="work/ap0cene/img/aephotika_1.JPG" alt="" loading="lazy">
-            <img src="work/ap0cene/img/aephotika_2.JPG" alt="" loading="lazy">
-            <img src="work/ap0cene/img/aephotika_3.JPG" alt="" loading="lazy">
-            <img src="work/ap0cene/img/SF_SalePost.png" alt="" loading="lazy">
-          </div>
-          <div class="arc-card-info">
-            <div class="arc-card-title">Ap0cene</div>
-            <div class="arc-card-sub">Social Media Design · 2022–23</div>
-            <div class="arc-card-body">Visual and digital design across platforms. Social-first assets with a strong editorial point of view.</div>
-          </div>
-        </div>
-
-        <div class="arc-card" onclick="openProject(5)">
-          <div class="arc-img-strip">
-            <img src="work/tus/tus_posters.png" alt="" loading="lazy">
-            <img src="work/tus/mp_folded.png" alt="" loading="lazy">
-            <img src="work/tus/tup_poster2.png" alt="" loading="lazy">
-          </div>
-          <div class="arc-card-info">
-            <div class="arc-card-title">Manifesto Posters — Taking Up Space</div>
-            <div class="arc-card-sub">Typography · 2021</div>
-            <div class="arc-card-body">A series of manifesto posters exploring space, type, and presence.</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- PROJECT DETAIL -->
-  <div id="project-detail">
-    <div class="project-scrim" onclick="closeProject()"></div>
-    <div class="project-panel">
-      <div class="project-panel-bar">
-        <span id="detail-label">Project</span>
-        <button class="project-panel-close" onclick="closeProject()">×</button>
-      </div>
-      <div class="project-strip" id="detail-strip"></div>
-      <div class="project-copy">
-        <div class="project-title" id="detail-title"></div>
-        <div class="project-sub"   id="detail-sub"></div>
-        <div class="project-body"  id="detail-body"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BOTTOM NAV -->
-  <nav class="tab-nav">
-    <button class="folder-tab" id="tab-about"   onclick="toggleOverlay('about-overlay','tab-about')"><span class="tab-dot"></span>About</button>
-    <button class="folder-tab" id="tab-work"    onclick="toggleOverlay('work-overlay','tab-work')"><span class="tab-dot"></span>Work</button>
-    <button class="folder-tab" id="tab-archive" onclick="toggleOverlay('archive-overlay','tab-archive')"><span class="tab-dot"></span>Archive</button>
+  <!-- Right-aligned nav — always visible -->
+  <nav id="site-nav">
+    <button id="nav-about">About</button>
+    <button id="nav-work">Work</button>
+    <button id="nav-archive">Archive</button>
   </nav>
+
+  <!-- Persistent name — top layer on every page, doubles as home button -->
+  <a id="site-name" href="index.html" onclick="closeAll();return false;">Oluschi Harmon</a>
+
+  <!-- Single bio/summary overlay — bottom-left on home, rides up into the About panel -->
+  <p id="site-bio">An interdisciplinary creative with a strong focus on art direction, and storytelling, specializing in the optimization of the social media experience.</p>
+
+
+  <!-- ══════════════════════════════
+       PAGE 1 — HOMEPAGE
+       ══════════════════════════════ -->
+  <div id="homepage">
+
+    <!-- Left half: bio (name is the persistent #site-name overlay) -->
+    <div class="home-left">
+     <!--  <p class="home-bio">
+        An interdisciplinary creative with a strong focus on art direction,
+        and storytelling, specializing in the optimization of the social
+        media experience.
+      </p> -->
+    </div>
+
+    <!-- Right half: keychain + work peek -->
+    <div class="home-right">
+
+      <!-- Work peek images behind keychain -->
+      <img src="img/site_card.gif" alt="">
+      <div class="work-peek-images">
+        <!-- vertical example photos: Highsnobiety social + Carolina Herrera event -->
+        <!-- <div class="peek-img">
+          <img src="work/highsnobiety/img/peter_blink.gif" alt="">
+        </div>
+        <div class="peek-img">
+          <img src="work/carolina-herrera/img/260528_DeLaTorre_021.jpg" alt="">
+        </div>
+      </div> -->
+
+      <!-- Keychain GIF — centered, floating -->
+      <div class="keychain-wrap">
+        <!-- Replace src with img/keychain.gif when asset is ready --><!-- <img src="img/site_card.gif" alt=""> -->
+        <!-- <div class="keychain-gif ph"> --> </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════
+       PAGE 2 — ABOUT PANEL
+       ══════════════════════════════ -->
+  <div id="about-panel" class="panel">
+
+    <button class="panel-tab" data-panel="about" aria-label="Open About"></button>
+
+    <div class="panel-scroll">
+    <div class="about-inner">
+
+      <!-- Left: text -->
+      <div class="about-left">
+        <!-- bio: desktop uses the #site-bio overlay; mobile shows this in-flow (scrollable) -->
+        <p class="about-bio">An interdisciplinary creative with a strong focus on art direction, and storytelling, specializing in the optimization of the social media experience.</p>
+        <p class="about-location">Currently based in NYC</p>
+
+        <span class="about-exp-label">Experience</span>
+        <div class="exp-row">
+          <span class="exp-role">Creative Strategist · Pinterest</span>
+          <span class="exp-year">2024 – Present</span>
+        </div>
+        <div class="exp-row">
+          <span class="exp-role">Creative Producer · Ok Cool</span>
+          <span class="exp-year">2024</span>
+        </div>
+        <div class="exp-row">
+          <span class="exp-role">Social Media Editor · Highsnobiety</span>
+          <span class="exp-year">2023–24</span>
+        </div>
+        <div class="exp-row">
+          <span class="exp-role">Graphic &amp; Social Intern · Collina Strada</span>
+          <span class="exp-year">2023</span>
+        </div>
+        <div class="exp-row">
+          <span class="exp-role">Social Media Designer · Ap0cene</span>
+          <span class="exp-year">2022–23</span>
+        </div>
+      </div>
+
+      <!-- Right: portrait + objects -->
+      <div class="about-right">
+          <img
+            class="portrait-heart"
+            src="about/img/lulu.png"
+            alt="Oluschi Harmon" >
+         
+          <!-- Keys placeholder -->
+          <!-- <div class="about-keys ph" style="border-radius:4px;">keys</div> -->
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════
+       PAGE 3 — WORK INDEX PANEL
+       ══════════════════════════════ -->
+  <div id="work-panel" class="panel">
+
+    <button class="panel-tab" data-panel="work" aria-label="Open Work"></button>
+
+    <div class="panel-scroll">
+    <div class="work-inner">
+
+      <!-- Project list -->
+      <div class="work-list">
+
+        <!-- 01 — ACTIVE (large) — links to its own page -->
+        <a class="work-item" href="work/carolina-herrera/index.html">
+          <div class="work-item-header">
+            <span class="work-item-name">Pinterest Predicts × Carolina Herrera</span>
+          </div>
+          <div class="work-item-meta">
+            <span>Experiential</span><span class="work-item-year">2026</span>
+          </div>
+          <!-- Hover preview -->
+          <div class="work-preview-wrap">
+            <div class="work-preview-img"><img src="work/carolina-herrera/img/IMG_3415.jpg" alt=""></div>
+          </div>
+        </a>
+
+        <!-- 02 -->
+        <a class="work-item" href="work/nike/index.html">
+          <div class="work-item-header">
+            <span class="work-item-name">Pinterest × Nike</span>
+          </div>
+          <div class="work-item-meta"><span>Art Direction</span><span class="work-item-year">2026</span></div>
+          <div class="work-preview-wrap">
+            <div class="work-preview-img"><img src="work/nike/img/cover_img_nike.jpg" alt=""></div>
+          </div>
+        </a>
+
+        <!-- 03 -->
+        <a class="work-item" href="work/ok-cool/index.html">
+          <div class="work-item-header">
+            <span class="work-item-name">Ok Cool</span>
+          </div>
+          <div class="work-item-meta"><span>Creative Production</span><span class="work-item-year">2024</span></div>
+          <div class="work-preview-wrap">
+            <div class="work-preview-img"><img src="work/ok-cool/img/trust_fund.gif" alt=""></div>
+          </div>
+        </a>
+
+
+        <!-- 04 -->
+        <a class="work-item" href="work/julie/index.html">
+          <div class="work-item-header">
+            <span class="work-item-name">Highsnobiety × Julie</span>
+          </div>
+          <div class="work-item-meta"><span>Experiential</span><span class="work-item-year">2024</span></div>
+          <div class="work-preview-wrap">
+            <div class="work-preview-img"><img src="work/julie/img/pb_img_1.png" alt=""></div>
+          </div>
+        </a>
+
+        <!-- 05 -->
+        <a class="work-item" href="work/highsnobiety/index.html">
+          <div class="work-item-header">
+            <span class="work-item-name">Highsnobiety Socials</span>
+          </div>
+          <div class="work-item-meta"><span>Creative Production</span><span class="work-item-year">2023–24</span></div>
+          <div class="work-preview-wrap">
+            <div class="work-preview-img"><img src="work/highsnobiety/img/asap.gif" alt=""></div>
+          </div>
+        </a>
+
+                <!-- 06 -->
+        <a class="work-item" href="work/collina/index.html">
+          <div class="work-item-header">
+            <span class="work-item-name">Collina Strada</span>
+          </div>
+          <div class="work-item-meta"><span>Creative Production</span><span class="work-item-year">2023</span></div>
+          <div class="work-preview-wrap">
+            <div class="work-preview-img"><img src="work/collina/img/bearheads.gif" alt=""></div>
+          </div>
+        </a>
+
+      </div><!-- /work-list -->
+
+      <!-- Right default photo -->
+<!--       <div class="work-right-default">
+        <img
+          class="work-default-photo"
+          src="work/ok-cool/img/8_ball.gif"
+          alt=""
+        >
+      </div> -->
+
+      <!-- Spinning star — appears where the USB charm used to, on work hover -->
+      <img class="work-star-charm" src="img/star.gif" alt="">
+
+    </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════
+       ARCHIVE PANEL
+       ══════════════════════════════ -->
+  <div id="archive-panel" class="panel">
+
+    <button class="panel-tab" data-panel="archive" aria-label="Open Archive"></button>
+
+    <div class="panel-scroll">
+    <div class="archive-inner">
+
+      <!-- Doodles — scattered in corners + empty gutters only (never over the images) -->
+      <div class="archive-doodles" aria-hidden="true">
+        <img class="doodle" src="archive/img/doodles/openstar.png"      alt="" style="top:2%;   left:2%;   --d-size:84px;  --d-rot:-12deg;">
+        <img class="doodle" src="archive/img/doodles/star.png"          alt="" style="top:1.5%; right:6%;  --d-size:78px;  --d-rot:14deg;">
+        <img class="doodle" src="archive/img/doodles/flower.png"        alt="" style="top:11%;  right:10%; --d-size:104px; --d-rot:10deg;">
+        <img class="doodle" src="archive/img/doodles/heart.png"         alt="" style="top:20%;  left:3%;   --d-size:80px;  --d-rot:-10deg;">
+        <img class="doodle" src="archive/img/doodles/smile.png"         alt="" style="top:30%;  left:6%;   --d-size:100px; --d-rot:8deg;">
+        <img class="doodle" src="archive/img/doodles/shine-heart.png"   alt="" style="top:33%;  right:9%;  --d-size:88px;  --d-rot:-8deg;">
+        <img class="doodle" src="archive/img/doodles/filled-hearts.png" alt="" style="top:44%;  left:4%;   --d-size:96px;  --d-rot:12deg;">
+        <img class="doodle" src="archive/img/doodles/openstar.png"      alt="" style="top:50%;  right:8%;  --d-size:80px;  --d-rot:16deg;">
+        <img class="doodle" src="archive/img/doodles/filled-flower.png" alt="" style="top:55%;  left:7%;   --d-size:116px; --d-rot:-14deg;">
+        <img class="doodle" src="archive/img/doodles/flower.png"        alt="" style="top:66%;  right:11%; --d-size:100px; --d-rot:-10deg;">
+        <img class="doodle" src="archive/img/doodles/smile.png"         alt="" style="top:72%;  left:5%;   --d-size:92px;  --d-rot:6deg;">
+        <img class="doodle" src="archive/img/doodles/heart.png"         alt="" style="top:82%;  right:9%;  --d-size:84px;  --d-rot:10deg;">
+        <img class="doodle" src="archive/img/doodles/shine-heart.png"   alt="" style="top:88%;  left:4%;   --d-size:96px;  --d-rot:16deg;">
+        <img class="doodle" src="archive/img/doodles/star.png"          alt="" style="top:96%;  left:2%;   --d-size:80px;  --d-rot:-12deg;">
+        <img class="doodle" src="archive/img/doodles/filled-flower.png" alt="" style="top:95%;  right:6%;  --d-size:104px; --d-rot:8deg;">
+      </div>
+
+      <!-- Keys charm -->
+      <!-- <div class="archive-keys-charm ph" style="top:120px;">keys</div> -->
+
+      <!-- Archive card — Pinterest × e.l.f. -->
+      <div class="archive-card">
+        <span class="archive-star" style="top:-8px;right:80px;font-size:15px;transform:rotate(10deg);">✦</span>
+        <div class="archive-card-copy">
+        <div class="archive-card-title">Pinterest × e.l.f. Cosmetics Zine</div>
+        <div class="archive-card-year">Creative Strategy · 2024–25</div>
+        <div class="archive-card-desc">
+          Brought to life — from concepting to production — the look and
+          feel of Pinterest's first digital zine with e.l.f. Cosmetics.
+        </div>
+        </div>
+        <div class="archive-card-images">
+          <img src="archive/img/elf-zine/zine_2.gif" alt="">
+          <img src="archive/img/elf-zine/pin_zine.gif" alt="">
+          <img src="archive/img/elf-zine/zine_1.gif" alt="">
+        </div>
+      </div>
+
+      <!-- Archive — To Be Archived -->
+      <div class="archive-card archive-card--right">
+        <span class="archive-star" style="top:10px;right:60px;font-size:16px;transform:rotate(20deg);">✦</span>
+        <div class="archive-card-copy">
+        <div class="archive-card-title">To Be Archived</div>
+        <div class="archive-card-year">Web + Book Design · 2023</div>
+        <div class="archive-card-desc">
+          BFA thesis. A mixed media archive capturing personal style
+          over 30 days — website and physical journal.
+        </div>
+        </div>
+        <div class="archive-card-images">
+          <img src="archive/img/to-be-archived/TBA_Home.gif" alt="">
+          <img src="archive/img/to-be-archived/tba_pics.gif" alt="">
+          <img src="archive/img/to-be-archived/Final_Poster.gif" alt="">
+          <img src="archive/img/to-be-archived/archived_outfits.jpg" alt="">
+          <img src="archive/img/to-be-archived/scan_sketch_3.png" alt="">
+        </div>
+      </div>
+
+      <!-- Archive — 256 Book -->
+      <div class="archive-card">
+        <div class="archive-card-copy">
+        <div class="archive-card-title">256 Book</div>
+        <div class="archive-card-year">Book Design · 2022</div>
+        <div class="archive-card-desc">
+          A book inspired by the aesthetics of Instagram saved folders.
+          Random images and moments — made physical.
+        </div>
+        </div>
+        <div class="archive-card-images">
+          <img src="archive/img/256-book/256_SavedImages.png" alt="">
+          <img src="archive/img/256-book/bn_256.gif" alt="">
+          <img src="archive/img/256-book/cover_256.png" alt="">
+          <img src="archive/img/256-book/mc_256.gif" alt="">
+        </div>
+      </div>
+
+      <!-- Archive — Al-Majles -->
+      <div class="archive-card archive-card--right">
+        <span class="archive-star" style="bottom:0;left:-10px;font-size:11px;transform:rotate(-8deg);">✦</span>
+        <div class="archive-card-copy">
+        <div class="archive-card-title">Al-Majles</div>
+        <div class="archive-card-year">Experimental Design · 2023</div>
+        <div class="archive-card-desc">
+          The psychology of Arabian men, explored through the
+          stylization of late-90s editing.
+        </div>
+        </div>
+        <div class="archive-card-images">
+          <img src="archive/img/almajles/Al_Majles.gif" alt="">
+          <img src="archive/img/almajles/Al_Majles_motion.gif" alt="">
+          <img src="archive/img/almajles/Shirt_mockup.png" alt="">
+          <img src="archive/img/almajles/flyingcards_Album.png" alt="">
+        </div>
+      </div>
+
+      <!-- Archive — Ap0cene -->
+      <div class="archive-card">
+        <span class="archive-star" style="bottom:20px;right:20px;font-size:13px;transform:rotate(-5deg);">✦</span>
+        <div class="archive-card-copy">
+        <div class="archive-card-title">Ap0cene</div>
+        <div class="archive-card-year">Social Media Design · 2022–23</div>
+        <div class="archive-card-desc">
+          Social media design and digital assets across platforms
+          for a creative content agency.
+        </div>
+        </div>
+        <div class="archive-card-images">
+          <img src="archive/img/ap0cene/GiftGuide_Ap0cene.gif" alt="">
+          <img src="archive/img/ap0cene/SF_SalePost.png" alt="">
+          <img src="archive/img/ap0cene/shyfck_Graphics_blush.gif" alt="">
+          <img src="archive/img/ap0cene/aephotika_1.JPG" alt="">
+          <img src="archive/img/ap0cene/aephotika_2.JPG" alt="">
+          <img src="archive/img/ap0cene/aephotika_3.JPG" alt="">
+        </div>
+      </div>
+
+      <!-- Archive — Manifesto Posters: Taking Up Space -->
+      <div class="archive-card archive-card--right">
+        <div class="archive-card-copy">
+        <div class="archive-card-title">Manifesto Posters — Taking Up Space</div>
+        <div class="archive-card-year">Typography · 2021</div>
+        <div class="archive-card-desc">
+          A series of manifesto posters exploring space, type,
+          and presence.
+        </div>
+        </div>
+        <div class="archive-card-images">
+          <img src="archive/img/tus/mp_folded.png" alt="">
+          <img src="archive/img/tus/tus_posters.png" alt="">
+          <img src="archive/img/tus/tup_poster2.png" alt="">
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════
+       PROJECT LAYER — slides up over the Work list
+       ══════════════════════════════ -->
+  <div id="project-layer" class="project-layer" aria-hidden="true">
+    <button class="project-layer-close" aria-label="Back to Work">✕ Work</button>
+    <div class="project-layer-body"></div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
